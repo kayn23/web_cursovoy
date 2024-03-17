@@ -3,13 +3,10 @@
   <header
     class="p-4 bg-nord-5 shadow-nord-4 shadow-md dark:shadow-none dark:bg-nord-1 flex items-center justify-between"
   >
-    <NuxtLink to="/" class="flex items-center">
-      <img src="~/assets/logo.png" alt="Logo" class="w-[64px] rounded-full bg-nard-4" />
-      <span class="text-4xl">FastDelivery</span>
-    </NuxtLink>
+    <logo-link></logo-link>
     <div class="flex items-center">
-      <general-nav class="mr-4" />
-      <color-mode-selector></color-mode-selector>
+      <header-nav-general-nav class="mr-4" />
+      <ColorModeSelector></ColorModeSelector>
     </div>
   </header>
 </template>

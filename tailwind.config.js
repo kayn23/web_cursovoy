@@ -149,4 +149,5 @@ export default {
     extend: {},
   },
   plugins: [],
+  important: true,
 }

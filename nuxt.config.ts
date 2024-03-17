@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     dbUser: '',
     dbPassword: '',
     dbPort: '',
+    jwtSecret: '',
   },
   app: {
     head: {
@@ -15,7 +16,15 @@ export default defineNuxtConfig({
       title: 'FastDelivery',
     },
   },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/google-fonts', '@nuxtjs/color-mode', '@element-plus/nuxt'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/color-mode',
+    '@element-plus/nuxt',
+    '@vee-validate/nuxt',
+  ],
   pinia: {
     storesDirs: ['./store/**'],
   },
@@ -44,5 +53,16 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: '',
+  },
+  veeValidate: {
+    // disable or enable auto imports
+    autoImports: true,
+    // Use different names for components
+    componentNames: {
+      Form: 'vForm',
+      Field: 'vField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage',
+    },
   },
 })
