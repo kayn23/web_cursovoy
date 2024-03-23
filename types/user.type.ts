@@ -1,11 +1,13 @@
-export interface IUser {
-  id: number
+import type { RowDataPacket } from 'mysql2'
+
+export interface IUser extends RowDataPacket {
+  id: number | string
   name: string
   lastName: string
   phone: string
   documentNumber: string
   email: string
-  password: string
+  password?: string
   role: string
 }
 

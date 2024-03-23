@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 definePageMeta({
-  middleware: ['isAdmin'],
+  layout: 'account',
+  middleware: ['is-login', 'is-admin'],
 })
 </script>
 <template>
-  <div>Admin home</div>
+  <div>invoices edit</div>
 </template>
 <style lang="sass"></style>

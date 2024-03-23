@@ -21,3 +21,14 @@ export async function useConnection() {
     pool,
   }
 }
+export function useConnectionPool() {
+  const config = useRuntimeConfig()
+  const pool = mysql.createPool({
+    host: config.dbHost,
+    user: config.dbUser,
+    password: config.dbPassword,
+    // database: 'deliveryService',
+    database: 'delivery_control_system',
+  })
+  return { pool }
+}

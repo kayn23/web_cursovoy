@@ -1,11 +1,16 @@
 <script lang="ts" setup>
-const userState = useUserStore()
+const { userStore } = useInitStore()
+function signOut() {
+  userStore.signOut().then(() => {
+    navigateTo('/')
+  })
+}
 </script>
 <template>
   <NuxtLink to="/account">Аккаунт</NuxtLink>
   <NuxtLink
     to="#"
-    @click="userState.signOut()"
+    @click="signOut"
   >
     Выйти
   </NuxtLink>

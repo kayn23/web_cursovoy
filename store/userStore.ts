@@ -19,9 +19,14 @@ export var useUserStore = defineStore('user store', () => {
     if (!currentUser.value) return false
     return currentUser.value.role === 'admin'
   })
+  function signOut() {
+    currentUser.value = null
+    return authStore.signOut()
+  }
   return {
     isAdmin,
     currentUser,
     getUserInfo,
+    signOut,
   }
 })
